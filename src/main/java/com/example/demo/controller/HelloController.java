@@ -13,7 +13,6 @@ public class HelloController {
     // Post 요청 경우에는 PostMapping을 사용
     // GetMapping, PostMapping 뒤에 받아주는 url을 넣어 경로를 잡아줌
     @GetMapping("/hello-spring")
-    
     // ResponseBody가 있으면 사용자에게 data를 내려주고,
     // ResponseBody가 없으면 사용자에게 화면을 내려준다는 뜻
     @ResponseBody
@@ -22,7 +21,7 @@ public class HelloController {
     }
 
     // responseBody 어노테이션이 없고, return 타입이 String 이면, templates/해당주소.html 을 찾으러 감
-    // 밑의 같은 경우는 return에 걸려있는 hello.html 파일을 찾아 retunr 해준다
+    // 밑의 같은 경우는 return에 걸려있는 hello.html 파일을 찾아 return 해준다
     // Model 객체를 주입하지 않고, html만 리턴했을 때 정적인 html을 return 함
     // @RequestParam가 입력 값을 받고, 받은 입력 값을 출력해주는 역할
     // ReauestParam이란 url의 ?을 통해 데이터를 서버로 넘어온 데이터를 꺼내는 것
