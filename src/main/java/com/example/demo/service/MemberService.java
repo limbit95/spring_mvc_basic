@@ -3,7 +3,9 @@ package com.example.demo.service;
 import com.example.demo.domain.Member;
 import com.example.demo.repository.JdbcMemberRepository;
 //import com.example.demo.repository.MemberRepository;
+//import com.example.demo.repository.JdbcTemplateMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
