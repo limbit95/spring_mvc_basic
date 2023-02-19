@@ -54,13 +54,33 @@ public class MemberController {
         return "members/memberList";
     }
 
-    @GetMapping("/member/detail")
+    @GetMapping("/members/detail")
     public String membersDetail(@RequestParam(value="id")Long id, Model model){
         model.addAttribute("member", this.memberService.findById(id));
 
         return "members/memberDetail";
     }
 
+    @GetMapping("/members/findbyname")
+    @ResponseBody
+    public List<Member> memberFindByName(@RequestParam(value="name")String name){
+
+        return memberService.findByName(name);
+    }
+
+//    @GetMapping("/members/findbyidandname")
+//    @ResponseBody
+//    public List<Member> memberFindByIdAndName(@RequestParam(value="id")Long id, @RequestParam(value="name")String name){
+//
+//        return memberService.findByIdAndName(id, name);
+//    }
+
+    @GetMapping("/members/search")
+    public String membersSearch(){
+
+
+        return "members/membersearch";
+    }
 
 
 
