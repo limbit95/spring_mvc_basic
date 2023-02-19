@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -25,15 +26,15 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public void create(Member member){
+    public void create(Member member) throws SQLException {
         memberRepository.save(member);
     }
 
-    public List<Member> findAll(){
+    public List<Member> findAll() throws SQLException {
         return memberRepository.findAll();
     }
 
-    public Member findById(Long id){
+    public Member findById(Long id) throws SQLException {
         return memberRepository.findById(id);//.orElse(null);    // Jpa 기술 적용 했을 때 적용 가능
     }
 

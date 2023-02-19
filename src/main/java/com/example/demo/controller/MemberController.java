@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class MemberController {
     }
 
     @PostMapping("/members/new")
-    public String createData(@RequestParam(value="myName")String name){
+    public String createData(@RequestParam(value="myName")String name) throws SQLException {
         Member member = new Member();
         member.setName(name);
 
@@ -48,14 +49,14 @@ public class MemberController {
     }
 
     @GetMapping("/members/list")
-    public String membersList(Model model){
+    public String membersList(Model model) throws SQLException {
         model.addAttribute("members", this.memberService.findAll());
 
         return "members/memberList";
     }
 
     @GetMapping("/members/detail")
-    public String membersDetail(@RequestParam(value="id")Long id, Model model){
+    public String membersDetail(@RequestParam(value="id")Long id, Model model) throws SQLException {
         model.addAttribute("member", this.memberService.findById(id));
 
         return "members/memberDetail";
@@ -75,12 +76,12 @@ public class MemberController {
 //        return memberService.findByIdAndName(id, name);
 //    }
 
-    @GetMapping("/members/search")
-    public String membersSearch(){
-
-
-        return "members/membersearch";
-    }
+//    @GetMapping("/members/search")
+//    public String membersSearch(){
+//
+//
+//        return "members/membersearch";
+//    }
 
 
 
