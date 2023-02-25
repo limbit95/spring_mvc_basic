@@ -22,6 +22,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'  //jdbc 기능 추가 (2023-02-19)
 
+	// jsp, servlet을 위한 설정
+	// jsp의 경우 파일을 읽는 경로가 src/main/webapp/WEB-INF 에서 폴더를 찾는다
+	// thymeleaf : resources/templates 에서 파일을 찾는다
+	implementation 'javax.servlet:jstl'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
 //	compileOnly 'org.projectlombok:lombok'
 //	annotationProcessor 'org.projectlombok:lombok'

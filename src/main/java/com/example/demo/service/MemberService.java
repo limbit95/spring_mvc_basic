@@ -4,6 +4,8 @@ import com.example.demo.domain.Member;
 import com.example.demo.repository.JdbcMemberRepository;
 //import com.example.demo.repository.MemberRepository;
 //import com.example.demo.repository.JdbcTemplateMemberRepository;
+//import com.example.demo.repository.JdbcTemplateMemberRepository;
+import com.example.demo.repository.JpaMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -22,9 +24,9 @@ public class MemberService {
 //        this.memberRepository = memberRepository;
 //    }
 
-    private final JdbcMemberRepository memberRepository;
+    private final JpaMemberRepository memberRepository;
     @Autowired
-    public MemberService(JdbcMemberRepository memberRepository){
+    public MemberService(JpaMemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
 
